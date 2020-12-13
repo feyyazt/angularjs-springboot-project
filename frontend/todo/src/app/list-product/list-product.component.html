@@ -1,0 +1,23 @@
+<div class="content-wrapper" >
+
+    <h3> Ürün Listesi </h3>
+  
+    <ngx-datatable
+      class="material"
+      [rows]="rows"
+      [columns]="cols"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="'auto'"
+      [externalPaging]="true"
+      [externalSorting]="true"
+      [count]="page.totalElements"
+      [offset]="page.page"
+      [limit]="page.size"
+      (sort)="onSort($event)"
+      (page)='setPage($event)'>
+    </ngx-datatable>
+
+</div>
+<div>Page is:<b>{{page.totalElements>0 ? tempPage + 1 : '' }}</b></div>
